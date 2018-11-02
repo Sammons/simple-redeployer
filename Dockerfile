@@ -7,3 +7,5 @@ ADD package.json package-lock.json /app/
 RUN npm install
 
 ADD app.js /app/
+
+ENTRYPOINT [ node app ]

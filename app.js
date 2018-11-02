@@ -17,10 +17,10 @@ async function updateService(serviceName) {
   const toUpdate = services.find(service => service.Spec.Name === serviceName);
   if (toUpdate) {
     const toUpdateId = toUpdate.ID;
-    await docker.getService(toUpdateId).update({
+    await docker.getService(toUpdateId).update(Object.assign(toUpdate.Spec, {
       version: toUpdate.Version.Index,
       force: true
-    });
+    }));
   } else {
     throw new Error('Could not find service ' + serviceName)
   }

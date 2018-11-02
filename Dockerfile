@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:alpine
 
 WORKDIR /app
 
@@ -6,6 +6,8 @@ ADD package.json package-lock.json /app/
 
 RUN npm install
 
-ADD app.js /app/
+ADD app.js /app/app.js
 
-ENTRYPOINT [ node app ]
+EXPOSE 3000
+
+CMD node /app/app.js

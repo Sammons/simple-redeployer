@@ -24,6 +24,7 @@ async function updateService(serviceName) {
   const toUpdate = services.find(service => service.Spec.Name === serviceName);
   if (toUpdate) {
     const toUpdateId = toUpdate.ID;
+    toUpdate.Spec.TaskTemplate.ForceUpdate = (toUpdate.Spec.TaskTemplate.ForceUpdate || 1) + 1;
     await docker.getService(toUpdateId).update(Object.assign(toUpdate.Spec, {
       version: toUpdate.Version.Index,
       force: true

@@ -9,7 +9,7 @@ const app = express();
 const hooks = config.hooks;
 
 async function pullLatestImage(imageName) {
-  await docker.pull(imageName, {});
+  await docker.pull(imageName);
 }
 
 async function updateService(serviceName) {

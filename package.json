@@ -1,0 +1,10 @@
+{
+  "name": "redeployer",
+  "scripts": {
+    "build": "docker build . -t sammons/simple-redeployer:latest && docker push sammons/simple-redeployer:latest"
+  },
+  "dependencies": {
+    "dockerode": "^2.5.7",
+    "express": "^4.16.4"
+  }
+}

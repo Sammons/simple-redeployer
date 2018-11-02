@@ -1,0 +1,10 @@
+{
+  "hooks": [
+    {
+      "verb": "post",
+      "url": "/sammonsio/redeploy",
+      "image": "sammons/sammonsio:latest",
+      "service": "llc_sammonsio"
+    }
+  ]
+}
